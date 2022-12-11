@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.addpost.AddPostFragment">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="dev.simranjeet.firstbuddy.ui.post.PostViewModel" />
+    </data>
+
+
+    <LinearLayout
+        android:id="@+id/toolbar_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/purple_200">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Public Post"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/lbl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_small"
+            android:text="Do you have sometihing to share with community? PLease feel free to post it by submitting below form. "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_small">
+
+            <TextView
+                android:id="@+id/lbl_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_large"
+                android:paddingTop="@dimen/padding_small"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/noraml_text" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_title"
+                android:layout_marginBottom="@dimen/padding_small"
+                android:hint="Title"
+                android:imeOptions="actionNext" />
+
+            <TextView
+                android:id="@+id/des_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:paddingTop="@dimen/padding_small"
+                android:text="Description"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/noraml_text" />
+
+            <EditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/des_lbl"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:gravity="top"
+                android:hint="Description"
+                android:imeOptions="actionDone"
+                android:minLines="5" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/buttonAdd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/purple_200"
+                android:text="Submit Post"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

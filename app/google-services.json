@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336533148967",
+    "project_id": "first-buddy-cbba3",
+    "storage_bucket": "first-buddy-cbba3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336533148967:android:8dd5656e92b4a01f0cc502",
+        "android_client_info": {
+          "package_name": "dev.simranjeet.firstbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336533148967-71l5bvrg0h7rtpf5cnr0foleh5plmv2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_z8AKDC0MZjRgZsCN_cxQPNA7dlNLkYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336533148967-71l5bvrg0h7rtpf5cnr0foleh5plmv2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

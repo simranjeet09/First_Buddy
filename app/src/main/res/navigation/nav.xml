@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="dev.simranjeet.firstbuddy.ui.home.categories.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_home_to_post_fragment"
+            app:destination="@id/postListFragment" />
+        <argument
+            android:name="mainTitle"
+            app:argType="string"
+            android:defaultValue="Accommodation"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="dev.simranjeet.firstbuddy.ui.home.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="dev.simranjeet.firstbuddy.ui.addpost.AddPostFragment"
+        android:label="fragment_post"
+        tools:layout="@layout/fragment_post" >
+        <action
+            android:id="@+id/action_postFragment_to_postListFragment"
+            app:destination="@id/postListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactUs"
+        android:name="dev.simranjeet.firstbuddy.ui.home.ContactUs"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/postListFragment"
+        android:name="dev.simranjeet.firstbuddy.ui.post.PostListFragment"
+        android:label="PostListFragment" >
+        <argument
+            android:name="mainTitle"
+            app:argType="string"
+            android:defaultValue="Accommodation"/>
+
+    </fragment>
+</navigation>
