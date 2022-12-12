@@ -11,15 +11,18 @@ import io.reactivex.Completable
 
 
 class FirebaseSource {
-
+    // get firebase instance
     private val firebaseAuth: FirebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
+    // get firestore instance
+
     val db: FirebaseFirestore by lazy {
         Firebase.firestore
 
     }
 
+    // user login implementation
 
     fun login(email: String, password: String) = Completable.create { emitter ->
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -31,6 +34,7 @@ class FirebaseSource {
             }
         }
     }
+    // forgot password implementation
 
     fun forgot(email: String) = Completable.create { emitter ->
         firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener {
@@ -42,6 +46,7 @@ class FirebaseSource {
             }
         }
     }
+    // register   implementation
 
     fun register(email: String, password: String) = Completable.create { emitter ->
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -54,23 +59,23 @@ class FirebaseSource {
         }
     }
 
+    //   categories reference implementation
 
-    fun getSavedAddress(): CollectionReference {
+    fun fetchCategories(): CollectionReference {
         var collectionReference = db.collection("categories")
         return collectionReference
     }
 
+    //   categories post reference implementation
 
     fun getPost(s:String): CollectionReference {
-        Log.e("uslll",s);
-        Log.e("uslll",s);
-        Log.e("uslll",s);
-        Log.e("uslll",s);
-        Log.e("uslll",s);
+
         var collectionReference = db.collection(s.lowercase().trim())
 
         return collectionReference
     }
+    //   add post reference implementation
+
     fun addPost(): CollectionReference {
 
         var collectionReference = db.collection("public")
@@ -78,8 +83,9 @@ class FirebaseSource {
         return collectionReference
     }
 
-
+//logout from firebase
     fun logout() = firebaseAuth.signOut()
+//get current logged in user
 
     fun currentUser() = firebaseAuth.currentUser
 
