@@ -1,6 +1,9 @@
 package dev.simranjeet.firstbuddy
 
 import android.app.Application
+import android.util.Log
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener
 import dev.simranjeet.firstbuddy.data.firebase.FirebaseSource
 import dev.simranjeet.firstbuddy.data.repositories.DataRepository
 import dev.simranjeet.firstbuddy.data.repositories.UserRepository
@@ -29,5 +32,13 @@ class FirebaseApplication : Application(), KodeinAware {
         bind() from provider { PostViewModelFactory(instance(), instance()) }
         bind() from provider { AddPostViewModelFactory(instance(), instance()) }
 
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+        MobileAds.initialize(this,
+            OnInitializationCompleteListener {
+                Log.e("called","admob")
+            })
     }
 }

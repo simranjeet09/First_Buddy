@@ -1,7 +1,6 @@
 package dev.simranjeet.firstbuddy.ui.post
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener
 import dev.simranjeet.firstbuddy.R
 import dev.simranjeet.firstbuddy.databinding.FragmentPostBinding
 import org.kodein.di.KodeinAware
@@ -39,6 +43,11 @@ class PostListFragment : Fragment(), KodeinAware {
 
             viewModel.fetchData()
         }
+
+
+         val adRequest = AdRequest.Builder().build()
+        binding.adView.loadAd(adRequest)
+
         binding.viewmodel = viewModel
         // This callback will only be called when MyFragment is at least Started.
         // This callback will only be called when MyFragment is at least Started.
